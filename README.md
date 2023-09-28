@@ -35,7 +35,9 @@ The above script is a one-line script to configure the VPS and routing. The belo
 
 ### 1. Update VPS
 
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update
+
+sudo apt-get upgrade
 
 ### 2. Install and Enable Tailscale
 
@@ -43,7 +45,9 @@ curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | sudo tee
 
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
-sudo apt-get update && sudo apt-get install tailscale
+sudo apt-get update
+
+sudo apt-get install tailscale
 
 sudo tailscale up
 
@@ -57,4 +61,6 @@ sudo iptables -A FORWARD -p tcp -d 100.104.157.143 --dport 32400 -j ACCEPT
 
 ### Make IPTables Persistent & Enable Packet Forwarding
 
-sudo apt install iptables-persistent && sudo sysctl -w net.ipv4.ip_forward=1
+sudo apt install iptables-persistent
+
+sudo sysctl -w net.ipv4.ip_forward=1
