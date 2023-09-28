@@ -55,9 +55,9 @@ sudo tailscale up
 
 sudo iptables -t nat -A POSTROUTING -o tailscale0 -j MASQUERADE
 
-sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 32400 -j DNAT --to 100.104.157.143:32400
+sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 32400 -j DNAT --to 1.2.3.4:32400
 
-sudo iptables -A FORWARD -p tcp -d 100.104.157.143 --dport 32400 -j ACCEPT
+sudo iptables -A FORWARD -p tcp -d 1.2.3.4 --dport 32400 -j ACCEPT
 
 ### Make IPTables Persistent & Enable Packet Forwarding
 
