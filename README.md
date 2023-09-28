@@ -13,7 +13,7 @@ This script will:
 
 The following command can be run to automatically configure the VPS. You will need to accept a few prompts as the script executes. Additionally, as it installs Tailscale, it will provide a link to activate the Tailscale for the VPS which you must copy into your browser, this will activate the Tailscale node on your device.
 
-## Script (One Line)
+## Step 1: Script (One Line)
 
 Copy and paste the below code into the terminal on your VPS (this should all be one line) and hit enter:
 
@@ -22,7 +22,7 @@ sudo apt-get update && sudo apt-get upgrade && curl -fsSL https://pkgs.tailscale
 NOTE: In the above script, you must replace 1.2.3.4 with the Tailscale IP Address of your Plex Server (ex. 100.101.143.491).
 You can find this Tailscale IP Address by going to Tailscale.com, logging in, finding the machine you set up in Prerequesite #1, and copying the address from the site.
 
-## Plex Configuration
+## Step 2: Plex Configuration
 
 In Plex, go to Settings -> Network -> Custom server access URLs
 
