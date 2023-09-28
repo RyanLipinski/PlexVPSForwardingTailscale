@@ -29,7 +29,7 @@ In Plex, go to Settings -> Network -> Custom server access URLs
 Add in the Static IP Address of your VPS (ex. http://12.392.47.382:32400)
 
 
-## Script Broken Down into Components
+# Script Broken Down into Components
 
 The above script is a one-line script to configure the VPS and routing. The below section breaks down the script into its components (running the script above will complete the install, the below scripts are for information purposes/do not need to be run separate):
 
