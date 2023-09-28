@@ -49,12 +49,12 @@ sudo tailscale up
 
 ### 3. Add IPTables Routing/Packet Forwarding
 
-iptables -t nat -A POSTROUTING -o tailscale0 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -o tailscale0 -j MASQUERADE
 
-iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 32400 -j DNAT --to 100.104.157.143:32400
+sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 32400 -j DNAT --to 100.104.157.143:32400
 
-iptables -A FORWARD -p tcp -d 100.104.157.143 --dport 32400 -j ACCEPT
+sudo iptables -A FORWARD -p tcp -d 100.104.157.143 --dport 32400 -j ACCEPT
 
 ### Make IPTables Persistent & Enable Packet Forwarding
 
-sudo apt install iptables-persistent && sysctl -w net.ipv4.ip_forward=1
+sudo apt install iptables-persistent && sudo sysctl -w net.ipv4.ip_forward=1
