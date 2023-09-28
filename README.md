@@ -1,6 +1,6 @@
 # PlexVPSForwardingTailscale
 
-The purpose of the below code is to provide a simple way to configure Remote Access to Plex through the use of a VPS (for example, to bypass a CGNAT).
+The purpose of the below code is to provide a simple way to configure Remote Access to Plex through the use of a VPS (for example, to bypass a CGNAT or to set up Remote Access when you are not able to Port Forward on your local network).
 
 This script will:
 - Perform an initial update of your system
