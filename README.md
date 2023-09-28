@@ -33,11 +33,11 @@ Add in the Static IP Address of your VPS (ex. http://12.392.47.382:32400)
 
 The above script is a one-line script to configure the VPS and routing. The below section breaks down the script into its components (running the script above will complete the install, the below scripts are for information purposes/do not need to be run separate):
 
-### Update VPS
+### 1. Update VPS
 
 sudo apt-get update && sudo apt-get upgrade
 
-### Install and Enable Tailscale
+### 2. Install and Enable Tailscale
 
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
 
@@ -47,7 +47,7 @@ sudo apt-get update && sudo apt-get install tailscale
 
 sudo tailscale up
 
-### Add IPTables Routing/Packet Forwarding
+### 3. Add IPTables Routing/Packet Forwarding
 
 iptables -t nat -A POSTROUTING -o tailscale0 -j MASQUERADE
 
