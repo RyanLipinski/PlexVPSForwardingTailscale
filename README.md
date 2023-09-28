@@ -2,6 +2,11 @@
 
 The purpose of the below code is to provide a simple way to configure Remote Access to Plex through the use of a VPS (for example, to bypass a CGNAT).
 
+This script will:
+- Perform an initial update of your system
+- Configure a Tailscale VPN tunnel between your Plex Server and the VPS server
+- Configure the IPTables rules to forward packets from your VPS to your Plex Server
+
 ## Prerequisites:
 - You must have a Tailscale account, and Tailscale must be set up and running on your Plex Server (you should be able to see your device with its associated Tailscale IP Address once you have logged into Tailscale.com).
 - You must have a VPS with a fixed/static IP Address. This guide presumes that this is a fresh VPS install (tested on Ubuntu LTS 22.04).
