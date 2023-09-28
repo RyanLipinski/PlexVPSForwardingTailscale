@@ -4,7 +4,7 @@ The purpose of the below code is to provide a simple way to configure Remote Acc
 
 This script will:
 - Perform an initial update of your system
-- Configure a Tailscale VPN tunnel between your Plex Server and the VPS server
+- Configure a Tailscale VPN tunnel between your Plex Server and your VPS server
 - Configure the IPTables rules to forward packets from your VPS to your Plex Server
 
 ## Prerequisites:
