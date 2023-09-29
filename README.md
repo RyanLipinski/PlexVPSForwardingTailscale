@@ -10,7 +10,7 @@ This script will:
 
 ## Prerequisites:
 - You must have a Tailscale account, and Tailscale must be set up and running on your Plex Server (you should be able to see your device with its associated Tailscale IP Address once you have logged into Tailscale.com).
-- You must have a VPS with a fixed/static IP Address. This guide presumes that this is a fresh VPS install (tested on Ubuntu LTS 22.04 running on a DigitalOcean VPS).
+- You must have a VPS with a fixed/static/reserved IP Address. This guide presumes that this is a fresh VPS install (tested on Ubuntu LTS 22.04 running on a DigitalOcean VPS).
 
 The following command can be run to automatically configure the VPS. You will need to accept a few prompts as the script executes. Additionally, as it installs Tailscale, a link will be provided in the terminal which you need to copy and paste into your web browser to activate Tailscale for your VPS, this will activate the Tailscale node on your device.
 
