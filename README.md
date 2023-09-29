@@ -18,7 +18,7 @@ The following command can be run to automatically configure the VPS. You will ne
 
 Copy and paste the below code into the terminal on your VPS (this should all be one line) and hit enter:
 
-sudo apt-get update && sudo apt-get upgrade && curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null && curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list && sudo apt-get update && sudo apt-get install tailscale && sudo tailscale up && sudo iptables -t nat -A POSTROUTING -o tailscale0 -j MASQUERADE && sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 32400 -j DNAT --to 1.2.3.4:32400 && sudo iptables -A FORWARD -p tcp -d 1.2.3.4 --dport 32400 -j ACCEPT && sudo apt install iptables-persistent && sudo sysctl -w net.ipv4.ip_forward=1 && sudo apt install fail2ban -y && sudo systemctl start fail2ban && sudo systemctl enable fail2ban
+sudo apt-get update && sudo apt-get upgrade -y && curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null && curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list && sudo apt-get update && sudo apt-get install tailscale -y && sudo tailscale up && sudo iptables -t nat -A POSTROUTING -o tailscale0 -j MASQUERADE && sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 32400 -j DNAT --to 1.2.3.4:32400 && sudo iptables -A FORWARD -p tcp -d 1.2.3.4 --dport 32400 -j ACCEPT && sudo apt install iptables-persistent -y && sudo sysctl -w net.ipv4.ip_forward=1 && sudo apt install fail2ban -y && sudo systemctl start fail2ban && sudo systemctl enable fail2ban
 
 NOTE: In the above script, you must replace 1.2.3.4 with the Tailscale IP Address of your Plex Server (ex. 100.101.143.491).
 You can find this Tailscale IP Address by going to Tailscale.com, logging in, finding the machine you set up in Prerequesite #1, and copying the address from the site.
@@ -46,7 +46,7 @@ The above script is a one-line script to configure the VPS and routing. The belo
 
 sudo apt-get update
 
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 ### 2. Install and Enable Tailscale
 
@@ -56,7 +56,7 @@ curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list
 
 sudo apt-get update
 
-sudo apt-get install tailscale
+sudo apt-get install tailscale -y
 
 sudo tailscale up
 
@@ -70,7 +70,7 @@ sudo iptables -A FORWARD -p tcp -d 1.2.3.4 --dport 32400 -j ACCEPT
 
 ### 4. Make IPTables Persistent & Enable Packet Forwarding
 
-sudo apt install iptables-persistent
+sudo apt install iptables-persistent -y
 
 sudo sysctl -w net.ipv4.ip_forward=1
 
