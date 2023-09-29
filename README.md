@@ -23,7 +23,7 @@ sudo apt-get update && sudo apt-get upgrade -y && curl -fsSL https://pkgs.tailsc
 NOTE: In the above script, you must replace 1.2.3.4 with the Tailscale IP Address of your Plex Server (ex. 100.101.143.491).
 You can find this Tailscale IP Address by going to Tailscale.com, logging in, finding the machine you set up in Prerequesite #1, and copying the address from the site.
 
-IMPORTANT NOTE: Some VPS Providers (including Oracle Free VPS) will include pre-built IPTables rules which will conflict with the rules added by this script. If these rules are not removed, Plex forwarding will not work. To resolve this, prior to running this script, you need to run the command to remove these predefined iptables rules: sudo iptables -F
+IMPORTANT NOTE: Some VPS Providers (including Oracle Free VPS) have pre-configured iptables which conflict with the above iptables rules. You may need to adjust/remove these rules prior to running this script. You can check whether you have these rules prior to running the above script by running the command "sudo iptables -L" (no quotes).
 
 ## Step 2 (Optional): Make Packet Forwarding enabled on reboot
 
