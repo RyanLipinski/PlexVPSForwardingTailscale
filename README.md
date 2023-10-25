@@ -39,6 +39,8 @@ In Plex, go to Settings -> Network -> Custom server access URLs
 
 Add in the Static IP Address of your VPS (ex. http://12.392.47.382:32400)
 
+I would also recommend adding your LAN Network (ex. 192.168.1.0/24) to Plex's Settings -> Network -> LAN Networks. This will flag the Tailscale traffic as 'external' (if this is not changed, Tailscale traffic will be internal and will follow your internal traffic Plex rules).
+
 
 # Script Broken Down into Components
 
